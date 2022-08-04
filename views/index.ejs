@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Disney quotes</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <section>
+        <h1>What's your favorite Disney quote?</h1>
+        <p>Add your favorite!</p>
+        <form action="/quotes" method="POST">
+            <input type="text" placeholder="movie title goes here" name="title">
+            <input type="text" placeholder="character name" name="name">
+            <input type="text" placeholder="quotes go here" name="quote">
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <section class="inputs">
+        <h2>Changing it up!</h2>
+        <p>Replace first quote matching your title with a new quote!<br> If none match, a new entry will be created.</p>
+        <input class="new-title" type="text" placeholder="title goes here" name="new-title">
+        <input class="new-name" type="text" placeholder="new character name" name="new-name">
+        <input class="new-quote" type="text" placeholder="new quotes go here" name="new-quote">
+        <br>
+        <button id="update-button">Replace quote</button>
+    </section>
+  <section class="inputs">
+        <h2>Remove a quote</h2>
+        <p>
+        Delete a quote. Does nothing if there are no matching quotes.
+        </p>
+        <input class="delete-quote" type="text" placeholder="quote want deleted" name="delete-quote">
+        <button id="delete-button">Delete quote</button>
+        <div id="message"></div>
+  </section>
+  <section>
+    <h2> Quotes </h2>
+        <ul class="quotes">
+        <!-- Loop through quotes -->
+        <% for(var i = 0; i < quotes.length; i++) {%>
+            <li class="quote">
+            <!-- Output name from the iterated quote object -->
+            <span><%= quotes[i].title %></span>:
+            <span><%= quotes[i].name %></span>
+            <!-- Output quote from the iterated quote object -->
+            <span>"<%= quotes[i].quote %>"</span>
+            </li>
+        <% } %>
+        </ul>
+    </section>
+    <script src="/main.js"></script>
+</body>
+</html>

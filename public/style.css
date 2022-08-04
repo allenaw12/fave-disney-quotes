@@ -1,0 +1,25 @@
+.inputs {
+    width: 45%;
+    display: inline-block;
+    text-align: center;
+    height: 280px;
+    vertical-align: middle;
+}
+section {
+    text-align: center;
+    padding: 1%;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding-bottom: 30px;
+}
+ul {
+    text-align: left;
+    list-style-type: none;
+}
+h1{
+    margin-top: 15px;
+    font-size: 2.5rem;
+}
+input{
+    margin: .3rem;
+}
